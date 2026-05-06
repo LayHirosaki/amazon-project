@@ -32,10 +32,34 @@ productArrObj.forEach((product) => {
         <img src="images/icons/checkmark.png" />
         Added
       </div>
-      <button class="add-to-cart-button button-primary">Add to Cart</button>
+      <button class="add-to-cart-button button-primary atc-btn" data-product-name="${product.name}">Add to Cart</button>
     </div>
   `;
   productsHTML += html;
 });
 
 document.querySelector('.products-grid').innerHTML = productsHTML;
+
+document.querySelectorAll('.atc-btn').forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    const productName = btn.dataset.productName;
+    let sameProduct;
+
+    cartArrObj.forEach((product) => {
+      if (product.productName === productName) {
+        sameProduct = product;
+      }
+    });
+
+    if (sameProduct) {
+      sameProduct.quantity++;
+    } else {
+      cartArrObj.push({
+        productName: productName,
+        quantity: 1,
+      });
+    }
+
+    console.log(cartArrObj);
+  });
+});
