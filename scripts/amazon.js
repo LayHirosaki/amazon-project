@@ -32,7 +32,7 @@ productArrObj.forEach((product) => {
         <img src="images/icons/checkmark.png" />
         Added
       </div>
-      <button class="add-to-cart-button button-primary atc-btn" data-product-name="${product.name}">Add to Cart</button>
+      <button class="add-to-cart-button button-primary atc-btn" data-product-id="${product.id}">Add to Cart</button>
     </div>
   `;
   productsHTML += html;
@@ -42,11 +42,11 @@ document.querySelector('.products-grid').innerHTML = productsHTML;
 
 document.querySelectorAll('.atc-btn').forEach((btn) => {
   btn.addEventListener('click', (e) => {
-    const productName = btn.dataset.productName;
+    const productId = btn.dataset.productId;
     let sameProduct;
 
     cartArrObj.forEach((product) => {
-      if (product.productName === productName) {
+      if (product.productId === productId) {
         sameProduct = product;
       }
     });
@@ -55,7 +55,7 @@ document.querySelectorAll('.atc-btn').forEach((btn) => {
       sameProduct.quantity++;
     } else {
       cartArrObj.push({
-        productName: productName,
+        productId: productId,
         quantity: 1,
       });
     }
