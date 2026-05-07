@@ -60,6 +60,12 @@ document.querySelectorAll('.atc-btn').forEach((btn) => {
       });
     }
 
-    console.log(cartArrObj);
+    let cartTotalQty = 0;
+
+    cartArrObj.forEach((item) => {
+      cartTotalQty += item.quantity;
+    });
+
+    document.querySelector('.cart-quantity').innerHTML = cartTotalQty;
   });
 });
