@@ -469,4 +469,26 @@ const productArrObj = [
     priceCents: 2400,
     keywords: ['sweaters', 'hoodies', 'apparel', 'mens'],
   },
+  {
+    id: 'lay01',
+    image: 'images/products/backpack.jpg',
+    name: 'Backpack',
+    rating: {
+      stars: 2.5,
+      count: 55,
+    },
+    priceCents: 9999,
+    keywords: ['backpack', 'back pack'],
+  },
+  {
+    id: 'lay02',
+    image: 'images/products/umbrella.jpg',
+    name: 'Umbrella',
+    rating: {
+      stars: 3,
+      count: 77,
+    },
+    priceCents: 5555,
+    keywords: ['umbrella'],
+  },
 ];
