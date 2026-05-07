@@ -1,5 +1,6 @@
 import { cartArrObj } from '../data/cart.js';
 import { productArrObj } from '../data/products.js';
+import { formatCurrency } from './utils/money.js';
 
 let cartSummaryHTML = '';
 
@@ -23,7 +24,7 @@ cartArrObj.forEach((cartItemObj) => {
 
       <div class="cart-item-details">
         <div class="product-name">${matchingProductObj.name}</div>
-        <div class="product-price">$${(matchingProductObj.priceCents / 100).toFixed(2)}</div>
+        <div class="product-price">$${formatCurrency(matchingProductObj.priceCents)}</div>
         <div class="product-quantity">
           <span> Quantity: <span class="quantity-label">${cartItemObj.quantity}</span> </span>
           <span class="update-quantity-link link-primary"> Update </span>
@@ -38,7 +39,7 @@ cartArrObj.forEach((cartItemObj) => {
             type="radio"
             checked
             class="delivery-option-input"
-            name="delivery-option-1"
+            name="delivery-option-${matchingProductObj.id}"
           />
           <div>
             <div class="delivery-option-date">Tuesday, June 21</div>
@@ -46,14 +47,14 @@ cartArrObj.forEach((cartItemObj) => {
           </div>
         </div>
         <div class="delivery-option">
-          <input type="radio" class="delivery-option-input" name="delivery-option-1" />
+          <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProductObj.id}" />
           <div>
             <div class="delivery-option-date">Wednesday, June 15</div>
             <div class="delivery-option-price">$4.99 - Shipping</div>
           </div>
         </div>
         <div class="delivery-option">
-          <input type="radio" class="delivery-option-input" name="delivery-option-1" />
+          <input type="radio" class="delivery-option-input" name="delivery-option-${matchingProductObj.id}" />
           <div>
             <div class="delivery-option-date">Monday, June 13</div>
             <div class="delivery-option-price">$9.99 - Shipping</div>
