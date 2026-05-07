@@ -1,1 +1,1 @@
-const cartArrObj = [];
+export const cartArrObj = [];
