@@ -64,3 +64,5 @@ cartArrObj.forEach((cartItemObj) => {
   </div>
   `;
 });
+
+document.querySelector('.order-summary').innerHTML = cartSummaryHTML;
