@@ -1,6 +1,8 @@
 import { cartArrObj } from '../data/cart.js';
+import { productArrObj } from '../data/products.js';
 
 let productsHTML = '';
+
 productArrObj.forEach((product) => {
   const html = `
     <div class="product-container">
